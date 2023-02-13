@@ -1,0 +1,9 @@
+# Python Files
+
+/venv
+
+config.py
+
+# Javascript Files
+
+/node_modules
