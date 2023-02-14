@@ -9,9 +9,9 @@ app.conf.update(timezone="Asia/Kathmandu")
 app.config_from_object("django.conf:settings", namespace="CELERY")
 
 app.conf.beat_schedule = {
-    "delete-unused-rooms": {
-        "task": "school.tasks.remove_unwanted_rooms",
-        "schedule": crontab(hour=15, minute=0),
+    "delete-expired-tokens": {
+        "task": "project.tasks.remove_expired_tokens",
+        "schedule": crontab(hour=9, minute=55),
         "args": ("Scheduled task done.",),
     }
 }

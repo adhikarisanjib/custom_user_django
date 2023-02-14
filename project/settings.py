@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     # Third Party Apps
     "crispy_forms",
     "crispy_tailwind",
+    "django_celery_beat",
     # Custom Apps
     "base",
 ]

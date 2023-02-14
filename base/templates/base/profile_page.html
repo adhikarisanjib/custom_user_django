@@ -5,7 +5,7 @@
 
 {% block body %}
 <div class="flex justify-center items-center pt-4">
-    <div class="flex flex-col shadow-md px-2 py-2 md:px-4 md:py-4 rounded-md">
+    <div class="flex flex-col shadow-md mx-4 px-2 py-2 md:px-4 md:py-4 rounded-md">
         <div class="flex flex-col md:flex-row">
             <div class="flex items-center justify-center mx-2 my-2 rounded-sm">
                 <img class="w-80 h-80 rounded-md" src="{{ user.avatar.url }}" alt="profile pic">
@@ -18,6 +18,7 @@
         {% if user.id == request.user.id %}
         <div class="flex items-center justify-center flex-wrap border-t border-gray-500 pt-2">
             <a class="my-2 px-3 py-2 mx-2 bg-blue-500 hover:bg-blue-700 text-white rounded" href="{% url 'base:update-profile' %}">Update Profile</a>
+            <a class="my-2 px-3 py-2 mx-2 bg-cyan-500 hover:bg-cyan-700 text-white rounded" href="{% url 'base:password-change' %}">Change Password</a>
             <button id="id_deactivate_account_button" class="mx-2 px-3 py-2 bg-red-500 hover:bg-red-700 text-white rounded">Deactivate Account</button>
             <button id="id_delete_account_button" class="mx-2 px-3 py-2 bg-red-500 hover:bg-red-700 text-white rounded">Delete Account</button>
         </div>
@@ -89,4 +90,5 @@
     document.getElementById("id_delete_account_button").addEventListener("click", showDeleteAccountModal)
     document.getElementById("id_delete_modal_cancel").addEventListener("click", hideDeleteAccountModal)
 </script>
+<div class="bg-"></div>
 {% endblock body %}

@@ -220,7 +220,7 @@ def email_verify_view(request, uidb64, token, *args, **kwargs):
     if not token_valid:
         messages.error(
             request,
-            "Either the token is invalid or it is expired. Please request password reset again.",
+            "Either the link is invalid or it is expired. Please proceed to login page and try logging in to get new link.",
         )
         return redirect("base:home")
 
@@ -303,7 +303,7 @@ def password_reset_view(request, uidb64, token, *args, **kwargs):
     if not token_valid:
         messages.error(
             request,
-            "Either the token is invalid or it is expired. Please request password reset again.",
+            "Either the link is invalid or it is expired. Please request password reset again.",
         )
         return redirect("base:home")
 

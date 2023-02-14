@@ -81,8 +81,9 @@ def send_password_reset_email(email, domain):
 
 
 @shared_task(bind=True)
-def remove_expired_tokens(data):
+def remove_expired_tokens(self, message):
     tokens = Token.objects.all()
     for token in tokens:
         if token.is_expired:
-            token.remove()
+            token.delete()
+    print(message)
